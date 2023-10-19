@@ -14,6 +14,7 @@ const refreshInterval = process.env.REFRESH_INTERVAL || '120'
 const runInterval = process.env.RUN_INTERVAL || '30'
 const runIterations = process.env.RUN_ITERATIONS || '1'
 const enableBail = process.env.ENABLE_BAIL || 'false'
+const enableInsecure = process.env.ENABLE_INSECURE || 'true'
 const requestMetrics = process.env.ENABLE_REQUEST_METRICS || 'true'
 
 let collectionName = ''
@@ -141,6 +142,7 @@ if (statusEnabled == 'true') {
         runInterval: parseInt(runInterval),
         refreshInterval: parseInt(refreshInterval),
         enableBail: enableBail == 'true',
+        enableInsecure: enableInsecure == 'true',
         collectionSource: collectionUrl ? collectionUrl : collectionFile,
         envSource: envUrl ? envUrl : envFile,
         requestMetrics: requestMetrics == 'true',
@@ -257,6 +259,7 @@ function runCollection() {
         iterationCount: parseInt(runIterations),
         bail: enableBail == 'true',
         environment: envData,
+        insecure: enableInsecure == 'true',
         envVar: postmanEnvVar,
       },
       runComplete
