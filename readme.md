@@ -54,6 +54,7 @@ The dashboard can be found in the [grafana directory](https://github.com/benc-uk
 | POSTMAN\_{varname}     | Environment vars to pass to running the collection               | _none_            |
 | METRICS_URL_PATH       | URL path to serve the metrics from, must start with slash        | /metrics          |
 | STATUS_ENABLED         | Enable/disable the status endpoint.                              | true              |
+| ENABLE_INSECURE        | Disable SSL verification checks certificates.                    | true              |
 
 > NOTE: When both `COLLECTION_URL` and `COLLECTION_FILE` are set, then `COLLECTION_URL` will take precedence. Likewise for `ENVIRONMENT_FILE` and `ENVIRONMENT_URL`. Meaning these configuration settings are effectively mutually exclusive
 
